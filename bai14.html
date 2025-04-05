@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài 14</title>
+    <style> 
+        body {
+            font-size: 16px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 50px auto 50px;
+            grid-template-areas: 
+            "header header header"
+            "aside1 content aside2"
+            "footer footer footer";
+            height: 100vh;
+            font-weight: bolder;
+        }
+        .header{
+            grid-area: header;
+            background-color: red;
+            text-align: center;
+            padding: 20px;
+            color: black;
+        }
+        .aside1{
+            grid-area: aside1;
+            background-color: yellow;
+            text-align: center;
+            padding: 20px;
+            color: black;
+        }
+        .aside2{
+            grid-area: aside2;
+            background-color: pink;
+            text-align: center;
+            padding: 20px;
+            color: black;
+        }
+        .content{
+            grid-area: content;
+            background-color: deepskyblue;
+            text-align: left;
+            padding: 20px;
+            color: black;
+            font-size: 40px;
+        }
+        .content img{
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            max-width: 100%;
+            display: block;
+        }
+        .footer{
+            grid-area: footer;
+            background-color: lightgreen;
+            padding: 20px;
+            text-align: center;
+            color: black;
+        }
+        @media (max-width: 1200px) {
+            .container{
+                grid-template-areas: 
+                "header header"
+                "content content"
+                "aside1 aside2"
+                "footer footer";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 50px auto auto 50px;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 20px;
+            }
+            .container{
+                grid-template-areas: 
+                "header"
+                "content"
+                "aside1"
+                "aside2"
+                "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: 50px auto auto auto 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="aside1">Aside 1</div>
+        <div class="content">
+            <div>Mô-đun Flexbox Layout (Flexible Box) (Theo khuyến nghị của W3C kể từ
+                tháng 10 năm 2017) nhằm mục đích cung cấp một cách bố trí, sắp xếp và
+                phân phối không gian hiệu quả hơn các item trong trông một container,
+                ngay cả khi kích thước của chúng không xác định hoạt động(Do đó có từ
+                'flex').</div>
+            <img src="https://ew.com/thmb/06MZjIzRRuzsd-e7YpWFKFyK7pU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/spiderman-evergreen-tout77-102924-2d18cb1780da4f578fcb73b0cc7c5eb4.jpg" alt="Spiderman">
+        </div>
+        <div class="aside2">Aside 2</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

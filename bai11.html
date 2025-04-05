@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+
+        /* MENU CHÍNH */
+        .navbar {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .menu li {
+            margin: 0 15px;
+        }
+        
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .menu a:hover, .menu a:focus {
+            background: #555;
+        }
+
+        /* HAMBURGER MENU */
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        /* RESPONSIVE MENU */
+        @media (max-width: 600px) {
+            .menu { 
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                background: #333;
+                padding: 10px 0;
+            }
+
+            .menu li {
+                padding: 10px 0;
+            }
+
+            .menu-icon {
+                display: block;
+                text-align: right;
+                padding: 10px;
+            }
+
+            .show { display: flex !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="menu-icon" onclick="document.getElementById('menu').classList.toggle('show')">☰</div>
+        <ul class="menu" id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
